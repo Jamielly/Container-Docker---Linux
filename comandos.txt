@@ -1,0 +1,41 @@
+Vídeo explicando os comandos que devem ser executados no docker playground, ou no terminal linux 'puro'
+
+--> https://youtu.be/wzxG8iY2E0Q
+
+PLAYGROUND: https://labs.play-with-docker.com/
+DOCKER HUB: https://hub.docker.com/_/ubuntu
+comandos: https://dontpad.com/jammy
+
+COMANDOS UTILIZADOS NO CONTAINER PARA ACRIAÇÃO DE VOLUMES MAPEAMENTO 
+
+docker pull ubuntu   - para baixar um contêiner
+docker ps -a   - para verificar se o contêiner está ativo
+docker volume ls   - indica os volumes 
+docker volume create ubuntu-01  - para criar um volume
+
+docker run -dt --name ubuntu-vol  -e UBUNTU_ROOT_PASSWORD=root -v ubuntu-01:/tmp/aula-volume   - para mapear um volume e ativar o contêiner em um comando
+sudo ls /var/lib/docker/volumes   - lista o caminho dos volumes  
+docker inspect ubuntu-vol  - identificar em que local está cada componente
+
+docker rm (ID) OU docker volume prune  - remove/apaga o volume 
+
+docker exec -it ubuntu-vol /bin/bash  - para entrar no terminal do volume
+
+Comandos dentro do volume no terminal: -------------------------------------------
+ ls   - para ver os diretórios presentes
+cd   - para entrar em um diretório
+
+cd tmp   - local onde é possível encontrar o aula-volume
+cd aula-volume/  - entra na pasta aula-volume
+
+Dentro da pasta aula-volume: --------------------------------------------------------
+ echo "Testando vol" >> teste.txt  - indica que é um arquivo de texto que vai possuir a frase testando vol como conteúdo
+cat teste.txt  - informa o conteúdo do txt
+exit  - sai do modo diretório do volume
+
+-------------------------------------------------------------------------------------------------
+Para mudar o conteúdo do txt:
+sudo vim /var/lib/docker/volumes/ubuntu-vol/_data/teste.txt
+
+Clicando a tecla i do teclado é possível editar
+Para sair e salvar o conteúdo ( : ) - dois pontos e wq (salvar e sair) 
