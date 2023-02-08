@@ -8,6 +8,8 @@ https://www.youtube.com/watch?v=wzxG8iY2E0Q
 
 ------------------------------------------------------------------------------------------------
 Artigo de minha autoria publicado na plataforma DIO( Digtal Innovation One) que pode contém mais informações:
+ https://web.dio.me/articles/comandos-basicos-para-voce-criar-volumes-mapeados-no-docker?back=%2Farticles&page=1&order=oldest
+
 
 
 Aqui estão os comandos básicos do Docker que são importantes para trabalhar com volumes mapeados:
